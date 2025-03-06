@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { StyleSheet, Text, View } from 'react-native';
 import { useState } from 'react';
-
+import { Color } from "colors";
 interface Config {
     date: string,
 
@@ -12,14 +12,12 @@ const ApiHndler: React.FC<Config> = ({ date }) => {
     const [data, setData] = useState<string>('');
 
     useEffect(() => {
-       
         console.log("https://numbersapi.p.rapidapi.com/" + date + "/date")
-
         fetch("https://numbersapi.p.rapidapi.com/" + date + "/date", {
             method: 'GET',
             headers: {
-                'x-rapidapi-host': 'numbersapi.p.rapidapi.com',
-                'x-rapidapi-key': '5afe43b81amsh7613b70abfc615ap1373a3jsn848e8eee669a'
+                'x-rapidapi-host': process.env.EXPO_PUBLIC_API_HOST,
+                'x-rapidapi-key': process.env.EXPO_PUBLIC_API_KEY,
             }
         }).then(response => {
             console.log(response.status)
