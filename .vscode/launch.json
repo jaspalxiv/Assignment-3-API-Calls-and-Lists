@@ -1,0 +1,18 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "Debug Android Expo",
+        "request": "launch",
+        "type": "reactnative",
+        "cwd": "${workspaceFolder}",
+        "platform": "android",
+        "sourceMaps": true,
+        "trace": "verbose",
+        "env": {
+          "EXPO_DEVTOOLS": "true"
+        }
+      }
+    ]
+  }
+  
