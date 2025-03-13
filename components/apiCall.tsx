@@ -16,8 +16,8 @@ const ApiHndler: React.FC<Config> = ({ date }) => {
         fetch("https://numbersapi.p.rapidapi.com/" + date + "/date", {
             method: 'GET',
             headers: {
-                'x-rapidapi-host': process.env.EXPO_PUBLIC_API_HOST,
-                'x-rapidapi-key': process.env.EXPO_PUBLIC_API_KEY,
+                'x-rapidapi-host': process.env.EXPO_PUBLIC_API_HOST !,
+                'x-rapidapi-key': process.env.EXPO_PUBLIC_API_KEY !,
             }
         }).then(response => {
             console.log(response.status)
